@@ -203,8 +203,8 @@ describe('css-imports', () => {
       expect(results).toEqual([
         {
           filePath: normalizePath(path.join(root, 'build', 'app', 'app.css')),
-          srcImport: `@import url('/build/app/app.css');`,
-          url: `/build/app/app.css`
+          srcImport: `@import url('${normalizePath(path.join(root, 'build', 'app', 'app.css'))}');`,
+          url: `${normalizePath(path.join(root, 'build', 'app', 'app.css'))}`
         }
       ]);
     });
